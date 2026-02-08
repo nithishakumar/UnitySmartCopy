@@ -2,14 +2,12 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace Editor
-{
-    public class SmartCopy
+public class SmartCopy 
     {
         struct SerializedPropertyData
         {
             public SerializedPropertyType propertyType;
-            public GlobalObjectId globalObjectId;
+            //public GlobalObjectId globalObjectId;
             public object boxedValue;
         }
         private static Dictionary<string, SerializedPropertyData> clipboard = new();
@@ -30,14 +28,14 @@ namespace Editor
                 {
                     propertyType = iterator.propertyType
                 };
-                if (iterator.propertyType == SerializedPropertyType.ObjectReference)
+                /*if (iterator.propertyType == SerializedPropertyType.ObjectReference)
                 {
                     entry.globalObjectId = GlobalObjectId.GetGlobalObjectIdSlow(iterator.objectReferenceValue);
                 }
                 else
-                {
+                {*/
                     entry.boxedValue = iterator.boxedValue;
-                }
+                //}
                 clipboard.Add(iterator.propertyPath, entry);
             }
         }
@@ -56,14 +54,14 @@ namespace Editor
                 {
                     continue;
                 }
-                if (targetProp.propertyType == SerializedPropertyType.ObjectReference)
+                /*if (targetProp.propertyType == SerializedPropertyType.ObjectReference)
                 {
                     targetProp.objectReferenceValue = GlobalObjectId.GlobalObjectIdentifierToObjectSlow(data.globalObjectId);
                 }
                 else
-                {
+                {*/
                     targetProp.boxedValue = data.boxedValue;
-                }
+                //}
             }
             targetSO.ApplyModifiedProperties();
         }
@@ -74,4 +72,3 @@ namespace Editor
             return clipboard != null && clipboard.Count > 0;
         }
     }
-}
