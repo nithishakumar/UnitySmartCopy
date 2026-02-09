@@ -341,12 +341,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4825bac646e4b49b5f7c92c742eba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Test1
-  obj1: {fileID: 0}
+  obj1: {fileID: 1892836907}
   string1: dummy
   color1: {r: 0.6320754, g: 0.15801886, b: 0.5681197, a: 1}
   int1: 20
   float1: 1000.2
   vector3: {x: 0, y: 0, z: 0}
+  vector3List:
+  - {x: 203, y: 4, z: 0}
+  - {x: 203, y: 4, z: 0}
 --- !u!65 &1892836909
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -452,12 +455,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51a4938e089794d428645b487e033d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Test
-  obj1: {fileID: 0}
+  obj1: {fileID: 1892836907}
   string1: dummy
   color1: {r: 0.6320754, g: 0.15801886, b: 0.5681197, a: 1}
   int1: 20
   float1: 1000.2
   vector3: {x: 0, y: 0, z: 0}
+  vector3List:
+  - {x: 203, y: 4, z: 0}
+  - {x: 203, y: 4, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

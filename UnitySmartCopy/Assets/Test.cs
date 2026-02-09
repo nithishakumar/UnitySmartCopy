@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Test : MonoBehaviour
@@ -19,6 +20,9 @@ public class Test : MonoBehaviour
 
     [SerializeField] 
     private Vector3 vector3;
+    
+    [SerializeField]
+    private List<Vector3> vector3List;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
