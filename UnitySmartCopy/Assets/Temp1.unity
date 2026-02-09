@@ -321,6 +321,7 @@ GameObject:
   - component: {fileID: 1892836910}
   - component: {fileID: 1892836909}
   - component: {fileID: 1892836908}
+  - component: {fileID: 1892836913}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -340,12 +341,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4825bac646e4b49b5f7c92c742eba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Test1
-  obj1: {fileID: 1291106149101542589, guid: cd22561dd469a49cdb82fbf7f802e682, type: 3}
+  obj1: {fileID: 0}
   string1: dummy
   color1: {r: 0.6320754, g: 0.15801886, b: 0.5681197, a: 1}
   int1: 20
   float1: 1000.2
-  vector3: {x: 2012, y: 229, z: 2.4}
+  vector3: {x: 0, y: 0, z: 0}
 --- !u!65 &1892836909
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -439,6 +440,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1892836913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892836907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a4938e089794d428645b487e033d01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Test
+  obj1: {fileID: 0}
+  string1: dummy
+  color1: {r: 0.6320754, g: 0.15801886, b: 0.5681197, a: 1}
+  int1: 20
+  float1: 1000.2
+  vector3: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
