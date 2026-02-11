@@ -5,7 +5,9 @@ It works across any built-in components, MonoBehaviours, and ScriptableObjects �
 
 ### Copying Matching Fields from CharacterProfile.cs to CharacterSetup.cs
 
-<img src=https://github.com/user-attachments/assets/72a228bb-2ddb-454f-8fcf-a104eb87b903 width="500"/>
+<p align="center">
+<img src=https://github.com/user-attachments/assets/72a228bb-2ddb-454f-8fcf-a104eb87b903 width="400"/>
+</p>
 
 #### What is copied?
 
@@ -33,7 +35,6 @@ If the property path and type match, the value is transferred automatically.
 The plugin preserves serialized data in memory — even if the source or target object is destroyed — allowing you to safely paste values later without losing data.
 
 <img width="900" height="437" alt="image" src="https://github.com/user-attachments/assets/34695783-6a86-4d3f-b24c-53e9a5c24844" /> 
-
 
 
 
