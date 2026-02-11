@@ -40,8 +40,15 @@ If the property path and type match, the value is transferred automatically.
 
 The plugin preserves serialized data in memory — even if the source or target object is destroyed — allowing you to safely paste values later without losing data.
 
-<img width="900" height="437" alt="image" src="https://github.com/user-attachments/assets/34695783-6a86-4d3f-b24c-53e9a5c24844" /> 
+<p align="center">
+<img width="800" height="437" alt="image" src="https://github.com/user-attachments/assets/7b020c2f-8686-45eb-84cb-2d4ef7001e86" />
+</p>
 
+| TestDataAsset.asset (CharacterDataAsset) | TestDataAsset1.asset (CharacterDataV2Asset) |
+|----------|----------|
+| <img width="550" height="543" alt="Screenshot 2026-02-11 at 9 29 51 AM" src="https://github.com/user-attachments/assets/1c1b9ff2-eba9-4e06-adfe-aaac4aca7e88" /> | <img width="546" height="522" alt="Screenshot 2026-02-11 at 9 30 07 AM" src="https://github.com/user-attachments/assets/49951cd5-7491-43bc-a401-fac05bc1da4a" /> |
+
+Note that BaseStats.CritChance is not copied since it doesn't exist in the target serialized object.
 
 
 
