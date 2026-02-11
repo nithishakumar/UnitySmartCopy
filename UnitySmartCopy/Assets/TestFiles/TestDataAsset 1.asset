@@ -9,17 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dea655eb967b34d029f9e36cb664c566, type: 3}
-  m_Name: TestDataAsset
-  m_EditorClassIdentifier: Assembly-CSharp::CharacterDataAsset
+  m_Script: {fileID: 11500000, guid: 72095e64807e1466b9fb36256c07aa05, type: 3}
+  m_Name: TestDataAsset 1
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDataV2Asset
   health: 10
-  speed: 2
+  movementSpeed: 0
   internalId: 44
   baseStats:
     strength: 13
     agility: 22
-    critChance: 12
-  levels: 0200000020000000
+    criticalHitRate: 0
+  experienceLevels: 
   tags:
   - tag1
   characterPrefab: {fileID: 1291106149101542589, guid: cd22561dd469a49cdb82fbf7f802e682, type: 3}

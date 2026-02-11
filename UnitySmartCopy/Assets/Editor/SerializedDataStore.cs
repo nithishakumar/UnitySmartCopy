@@ -92,6 +92,10 @@ public class SerializedDataStore
     private void SetSerializedPropertyValue(SerializedProperty targetProperty,
         SerializedPropertyData serializedProperty)
     {
+        if (targetProperty == null)
+        {
+            return;
+        }
         if (targetProperty.isArray && targetProperty.propertyType == SerializedPropertyType.Generic)
         {
             SetArraySerializedPropertyValue(targetProperty, serializedProperty);

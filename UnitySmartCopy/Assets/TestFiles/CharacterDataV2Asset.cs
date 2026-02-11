@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-[CreateAssetMenu(fileName = "TestDataAsset", menuName = "Test/Test Data Asset")]
+[CreateAssetMenu(fileName = "TestDataAsset", menuName = "CharacterDataV2Asset")]
 public class CharacterDataV2Asset : ScriptableObject
 {
     [Header("Primitive Fields")]
