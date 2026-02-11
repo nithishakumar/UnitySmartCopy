@@ -14,8 +14,8 @@ public class SmartCopy
         _serializedDataStore = new SerializedDataStore(serializedSourceObject, publicProperties);
     }
 
-    [MenuItem("CONTEXT/Component/Paste Serialized Values")]
-    private static void PasteValuesByPropertyPath(MenuCommand command)
+    [MenuItem("CONTEXT/Component/Paste Matching Serialized Values")]
+    private static void PasteMatchingSerializedValues(MenuCommand command)
     {
         var target = command.context;
         _serializedDataStore.CopyFromSerializedDataStore(target);
