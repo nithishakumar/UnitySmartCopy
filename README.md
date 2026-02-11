@@ -11,7 +11,7 @@ UnitySmartCopy copies and pastes all modifiable serializable fields, including:
 - Fields marked with [HideInInspector]
 - Nested serialized data
   
-If the property path and type match, the value is transferred automatically.
+If the property path and type match, the value is transferred automatically. Properties that don't match are left unaltered.
 
 ### Copying Matching Fields from CharacterProfile.cs to CharacterSetup.cs
 
