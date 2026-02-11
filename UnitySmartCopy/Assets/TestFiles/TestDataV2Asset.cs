@@ -2,11 +2,11 @@ using UnityEngine;
 using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "TestDataAsset", menuName = "Test/Test Data Asset")]
-public class TestDataAsset : ScriptableObject
+public class TestDataV2Asset : ScriptableObject
 {
     [Header("Primitive Fields")]
     public int health;
-    public float speed;
+    public float movementSpeed;
 
     [SerializeField] private string internalId;
 
@@ -14,7 +14,7 @@ public class TestDataAsset : ScriptableObject
     public Stats baseStats;
 
     [Header("Collections")]
-    public int[] levels;
+    public int[] experienceLevels;
     public List<string> tags;
 
     [Header("References")]
@@ -25,6 +25,6 @@ public class TestDataAsset : ScriptableObject
     {
         public int strength;
         public int agility;
-        public float critChance;
+        public float criticalHitRate;
     }
 }

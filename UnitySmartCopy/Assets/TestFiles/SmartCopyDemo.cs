@@ -4,24 +4,24 @@ using UnityEngine;
 public class SmartCopyDemo : MonoBehaviour
 {
     [SerializeField]
-    private GameObject obj1;
+    private GameObject characterPrefab;
+
+    [SerializeField]
+    private string playerName;
+    
+    [SerializeField]
+    private Color primaryColor;
+    
+    [SerializeField]
+    private int healthPoints;
+    
+    [SerializeField]
+    private float movementSpeed;
 
     [SerializeField] 
-    private string string1;
+    private Vector3 spawnPosition;
     
     [SerializeField]
-    private Color color1;
-    
-    [SerializeField]
-    private int int1;
-    
-    [SerializeField]
-    private float float1;
-
-    [SerializeField] 
-    private Vector3 vector3;
-    
-    [SerializeField]
-    private List<Vector3> vector3List;
+    private List<Vector3> patrolPoints;
     
 }

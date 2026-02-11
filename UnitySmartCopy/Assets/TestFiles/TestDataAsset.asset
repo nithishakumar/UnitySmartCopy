@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dea655eb967b34d029f9e36cb664c566, type: 3}
   m_Name: TestDataAsset
   m_EditorClassIdentifier: Assembly-CSharp::TestDataAsset
-  health: 10
-  speed: 2
-  internalId: 
+  health: 23
+  speed: 21
+  internalId: 3232
   baseStats:
-    strength: 0
-    agility: 0
-    critChance: 0
-  levels: 
-  tags: []
-  prefabReference: {fileID: 0}
+    strength: 19
+    agility: 12
+    critChance: 12
+  levels: 0100000002000000
+  tags:
+  - e3e3
+  prefabReference: {fileID: 1291106149101542589, guid: cd22561dd469a49cdb82fbf7f802e682, type: 3}
   materialReference: {fileID: 0}

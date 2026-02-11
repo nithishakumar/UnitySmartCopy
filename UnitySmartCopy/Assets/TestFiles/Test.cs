@@ -4,31 +4,31 @@ using UnityEngine;
 public class Test1 : MonoBehaviour
 {
     [SerializeField]
-    private GameObject obj1;
+    private float movementSpeed;
 
     [SerializeField] 
-    private string string1;
-    
+    private Vector3 spawnPosition;
+
     [SerializeField]
-    private Color color1;
-    
+    private List<Vector3> patrolPoints;
+
     [SerializeField]
-    private int int1;
-    
+    private string playerName;
+
     [SerializeField]
-    private float float1;
-    
+    private Color primaryColor;
+
+    [SerializeField]
+    private GameObject characterPrefab;
+
     [SerializeField] 
-    private Vector3 vector3;
-    
+    private string uniqueID;
+
     [SerializeField]
-    private List<Vector3> vector3List;
-    
+    private Color secondaryColor;
+
     [SerializeField]
-    private string string2;
-    
-    [SerializeField]
-    private Color color2;
-    
+    private int healthPoints;
 }
+
 
