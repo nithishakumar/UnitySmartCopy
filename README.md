@@ -1,2 +1,2 @@
 # UnitySmartCopy
-A unity plugin that copies component references and serialized values between different component types.
+A Unity editor plugin that copies serialized values between different object types.
