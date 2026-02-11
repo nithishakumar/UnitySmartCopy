@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test2 : MonoBehaviour
+public class CharacterController : MonoBehaviour
 {
     public struct Stats
     {
@@ -20,6 +20,6 @@ public class Test2 : MonoBehaviour
     [Header("Collections")] public int[] levels;
     public List<string> tags;
 
-    [Header("References")] public GameObject prefabReference;
+    [Header("References")] public GameObject characterPrefab;
     public Material materialReference;
 }

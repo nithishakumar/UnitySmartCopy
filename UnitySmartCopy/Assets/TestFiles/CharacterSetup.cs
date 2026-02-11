@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SmartCopyDemo : MonoBehaviour
+public class CharacterSetup : MonoBehaviour
 {
     [SerializeField]
     private GameObject characterPrefab;

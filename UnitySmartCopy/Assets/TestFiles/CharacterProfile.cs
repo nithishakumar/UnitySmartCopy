@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test1 : MonoBehaviour
+public class CharacterProfile : MonoBehaviour
 {
     [SerializeField]
     private float movementSpeed;
