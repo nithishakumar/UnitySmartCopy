@@ -2,13 +2,6 @@
 UnitySmartCopy is a Unity Editor plugin that lets you copy and paste serialized field values between any Unity objects by intelligently matching property path and type.
 It works across any built-in components, MonoBehaviours, and ScriptableObjects — even if they are unrelated classes — as long as their serialized fields match.
 
-
-### Copying Matching Fields from CharacterProfile.cs to CharacterSetup.cs
-
-<p align="center">
-<img src=https://github.com/user-attachments/assets/72a228bb-2ddb-454f-8fcf-a104eb87b903 width="400"/>
-</p>
-
 #### What is copied?
 
 UnitySmartCopy copies and pastes all modifiable serializable fields, including:
@@ -17,8 +10,14 @@ UnitySmartCopy copies and pastes all modifiable serializable fields, including:
 - Private fields marked with [SerializeField]
 - Fields marked with [HideInInspector]
 - Nested serialized data
-
+  
 If the property path and type match, the value is transferred automatically.
+
+### Copying Matching Fields from CharacterProfile.cs to CharacterSetup.cs
+
+<p align="center">
+<img src=https://github.com/user-attachments/assets/72a228bb-2ddb-454f-8fcf-a104eb87b903 width="400"/>
+</p>
 
 | CharacterProfile.cs | CharacterSetup.cs |
 |----------|----------|
@@ -26,8 +25,15 @@ If the property path and type match, the value is transferred automatically.
 
 
 ### Copying Matching Fields from TestDataAsset.asset to CharacterController.cs
-
+<br>
+<p align="center">
 <img src=https://github.com/user-attachments/assets/954912c7-c353-4780-88e5-8d91df252519 width="900"/>
+</p>
+<br>
+
+| TestDataAsset.asset | CharacterController.cs |
+|----------|----------|
+| <img width="549" height="535" alt="Screenshot 2026-02-11 at 9 21 51 AM" src="https://github.com/user-attachments/assets/01ff1401-9133-4a15-b9ed-dc730d1f8658" /> | <img width="540" height="402" alt="Screenshot 2026-02-11 at 9 22 37 AM" src="https://github.com/user-attachments/assets/8c8a194b-0787-4ee1-a95c-38de2a7200dc" /> |
 
 
 ### Smart Memory Preservation
