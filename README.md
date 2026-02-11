@@ -48,7 +48,7 @@ The plugin preserves serialized data in memory — even if the source or target 
 |----------|----------|
 | <img width="550" height="543" alt="Screenshot 2026-02-11 at 9 29 51 AM" src="https://github.com/user-attachments/assets/1c1b9ff2-eba9-4e06-adfe-aaac4aca7e88" /> | <img width="546" height="522" alt="Screenshot 2026-02-11 at 9 30 07 AM" src="https://github.com/user-attachments/assets/49951cd5-7491-43bc-a401-fac05bc1da4a" /> |
 
-Note that BaseStats.CritChance is not copied since it doesn't exist in the target serialized object.
+Note that BaseStats.CritChance is not copied since it doesn't exist in TestDataAsset1.asset.
 
 
 
