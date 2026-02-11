@@ -5,7 +5,7 @@ It works across any built-in components, MonoBehaviours, and ScriptableObjects â
 
 ### Copying Matching Fields from CharacterProfile.cs to CharacterSetup.cs
 
-<img src=https://github.com/user-attachments/assets/72a228bb-2ddb-454f-8fcf-a104eb87b903 width="538"/>
+<img src=https://github.com/user-attachments/assets/72a228bb-2ddb-454f-8fcf-a104eb87b903 width="500"/>
 
 #### What is copied?
 
