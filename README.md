@@ -38,7 +38,7 @@ If the property path and type match, the value is transferred automatically. Pro
 
 ### Smart Memory Preservation
 
-The plugin preserves serialized data in memory — even if the source or target object is destroyed — allowing you to safely paste values later without losing data.
+The plugin preserves serialized data in memory — even if the source or target object is destroyed — allowing you to safely paste values later without losing data. This would be useful when copying values from objects in play mode.
 
 <p align="center">
 <img width="800" height="437" alt="image" src="https://github.com/user-attachments/assets/7b020c2f-8686-45eb-84cb-2d4ef7001e86" />
