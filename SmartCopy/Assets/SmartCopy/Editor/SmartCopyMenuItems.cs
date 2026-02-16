@@ -2,6 +2,9 @@ using UnityEditor;
 
 namespace SmartCopy
 {
+    /// <summary>
+    /// Contains functions for menu items to copy and paste serialized values between Unity objects.
+    /// </summary>
     public class SmartCopyMenuItems
     {
         private static SerializedDataStore _serializedDataStore;

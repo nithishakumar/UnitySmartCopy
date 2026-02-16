@@ -5,8 +5,12 @@ using UnityEngine;
 
 namespace SmartCopy
 {
+    /// <summary>
+    /// Stores serialized data of an object in memory and transfers it between Unity objects.
+    /// </summary>
     public class SerializedDataStore
     {
+        /// Maps property paths to their respective data stored as SerializedPropertyData objects
         private Dictionary<string, SerializedPropertyData> store = new();
 
         struct SerializedPropertyData
@@ -15,6 +19,12 @@ namespace SmartCopy
             public object data;
         }
 
+        /// <summary>
+        /// Creates a new <see cref="SerializedDataStore"/> object by copying values from a specified <see cref="SerializedObject"/>
+        /// for the property paths listed in <paramref name="propertyPathsToStore"/>.
+        /// </summary>
+        /// <param name="serializedSourceObject">The <see cref="SerializedObject"/> to copy data from.</param>
+        /// <param name="propertyPathsToStore">The set of property paths whose values should be stored.</param>
         public SerializedDataStore(SerializedObject serializedSourceObject, HashSet<string> propertyPathsToStore)
         {
             foreach (var property in propertyPathsToStore)
@@ -29,6 +39,12 @@ namespace SmartCopy
             }
         }
 
+        /// <summary>
+        /// Copies stored serialized data to the specified <see cref="UnityEngine.Object"/>.
+        /// Iterates through the internal <see cref="store"/> and sets the value of each
+        /// serialized property on the target given the property paths and types match.
+        /// </summary>
+        /// <param name="target">The <see cref="UnityEngine.Object"/> to apply the stored data to.</param>
         public void CopyFromSerializedDataStore(Object target)
         {
             var targetObject = new SerializedObject(target);
@@ -48,6 +64,13 @@ namespace SmartCopy
             targetObject.ApplyModifiedProperties();
         }
 
+        /// <summary>
+        /// Gets the value of a <see cref="SerializedProperty"/> and stores it in a
+        /// <see cref="SerializedPropertyData"/> object.
+        /// Handles generic properties, object references, managed references, and standard types.
+        /// </summary>
+        /// <param name="property">The <see cref="SerializedProperty"/> to get the value from.</param>
+        /// <returns>A <see cref="SerializedPropertyData"/> object containing the property's type and value.</returns>
         private SerializedPropertyData GetValueFromSerializedProperty(SerializedProperty property)
         {
             var result = new SerializedPropertyData() { type = property.propertyType, };
@@ -72,6 +95,13 @@ namespace SmartCopy
             return result;
         }
 
+        /// <summary>
+        /// Recursively extracts data from a generic <see cref="SerializedProperty"/>.
+        /// </summary>
+        /// <param name="property">The generic <see cref="SerializedProperty"/> to extract data from.</param>
+        /// <returns>
+        /// A dictionary mapping property names to their data as <see cref="SerializedPropertyData"/> objects.
+        /// </returns>
         private Dictionary<string, SerializedPropertyData> GetValueFromGenericSerializedProperty(
             SerializedProperty property)
         {
@@ -91,6 +121,10 @@ namespace SmartCopy
             return result;
         }
 
+        /// <summary>
+        /// Sets a <paramref name="targetProperty"/>'s value from the <paramref name="serializedProperty"/>
+        /// given their property types match.
+        /// </summary>
         private void SetSerializedPropertyValue(SerializedProperty targetProperty,
             SerializedPropertyData serializedProperty)
         {
@@ -130,6 +164,10 @@ namespace SmartCopy
             }
         }
 
+        /// <summary>
+        /// Sets a <paramref name="targetProperty"/>'s array value from the <paramref name="serializedProperty"/>
+        /// given that serializedProperty stores valid array data.
+        /// </summary>
         private void SetArraySerializedPropertyValue(SerializedProperty targetProperty,
             SerializedPropertyData serializedProperty)
         {
@@ -158,6 +196,10 @@ namespace SmartCopy
             }
         }
 
+        /// <summary>
+        /// Sets a <paramref name="targetProperty"/>'s generic value from the <paramref name="serializedProperty"/>
+        /// given serializedProperty stores data of a generic serialized proeprty.
+        /// </summary>
         private void SetGenericSerializedPropertyValue(SerializedProperty targetProperty,
             SerializedPropertyData serializedProperty)
         {
