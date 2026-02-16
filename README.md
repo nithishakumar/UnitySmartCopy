@@ -55,7 +55,11 @@ Note that BaseStats.CritChance is not copied since it doesn't exist in TestDataA
 
 ### Install from Asset Store
 
-Visit this link to directly download the package.
+Visit the link below to directly download the package.
+
+```
+    https://assetstore.unity.com/packages/slug/361374
+```
 
 ####  Install using GitHub URL
 
