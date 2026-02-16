@@ -4,7 +4,7 @@ It works across any built-in components, MonoBehaviours, and ScriptableObjects â
 
 #### What is copied?
 
-UnitySmartCopy copies and pastes all modifiable serializable fields, including:
+SmartCopy copies and pastes all modifiable serializable fields, including:
 
 - Public fields
 - Private fields marked with [SerializeField]
