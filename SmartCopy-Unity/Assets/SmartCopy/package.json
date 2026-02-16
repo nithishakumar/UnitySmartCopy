@@ -1,0 +1,17 @@
+{
+  "name": "com.nithisha.smartcopy",
+  "version": "1.0.0",
+  "displayName": "SmartCopy",
+  "description": "Copy and paste serialized field values between any Unity objects",
+  "author": {
+    "name": "Nithisha Nantha Kumar",
+    "email": "nithishananthakumar.tinie21@gmail.com",
+    "url": "https://github.com/nithishakumar/UnitySmartCopy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nithishakumar/UnitySmartCopy.git",
+    "revision": "main"
+  },
+  "dependencies": {}
+}
