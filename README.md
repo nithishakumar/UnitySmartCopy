@@ -51,17 +51,11 @@ The plugin preserves serialized data in memory — even if the source or target 
 Note that BaseStats.CritChance is not copied since it doesn't exist in TestDataAsset1.asset.
 
 
-### Installation
+## Installation
 
 ### Install from Asset Store
 
 Visit this link to directly download the package.
-
-### Install by Name
-
-Installing from the Asset Store
-
-Open the Package Manager window by selecting Window > Package Manager, then click on [+] > Add package by name and enter "SmartCopy".
 
 ####  Install using GitHub URL
 
@@ -69,6 +63,13 @@ Open the Package Manager window by selecting Window > Package Manager, then clic
 ```
     https://github.com/nithishakumar/UnitySmartCopy?path=SmartCopy
 ```
+
+### Install by Name
+
+Installing from the Asset Store
+
+Open the Package Manager window by selecting Window > Package Manager, then click on [+] > Add package by name and enter "SmartCopy".
+
 
 
 
