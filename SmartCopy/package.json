@@ -8,5 +8,10 @@
     "email": "nithishananthakumar.tinie21@gmail.com",
     "url": "https://github.com/nithishakumar/UnitySmartCopy"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nithishakumar/UnitySmartCopy.git",
+    "revision": "main"
+  },
   "dependencies": {}
 }
