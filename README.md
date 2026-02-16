@@ -61,7 +61,7 @@ Visit the link below to directly download the package.
     https://assetstore.unity.com/packages/slug/361374
 ```
 
-####  Install using GitHub URL
+### Install using GitHub URL
 
 Open the Package Manager window by selecting Window > Package Manager, then click on [+] > Add package from git URL and enter the following URL:
 ```
