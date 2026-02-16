@@ -1,5 +1,5 @@
-# UnitySmartCopy
-UnitySmartCopy is a Unity Editor plugin that lets you copy and paste serialized field values between any Unity objects by intelligently matching property path and type.
+# SmartCopy - Copy Serialized Values Between Different Object Types
+SmartCopy is a Unity Editor plugin that lets you copy and paste serialized field values between any Unity objects by intelligently matching property path and type.
 It works across any built-in components, MonoBehaviours, and ScriptableObjects — even if they are unrelated classes — as long as their serialized fields match.
 
 #### What is copied?
