@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -254,20 +253,21 @@ namespace SmartCopy
                 return;
             }
             
-            var sourceIsSceneBound = EditorUnityObjectUtility.IsSceneBound(objectReference);
-            var targetIsSceneBound = EditorUnityObjectUtility.IsSceneBound(targetProperty.serializedObject.targetObject);
+            var isObjToCopyPersistent = EditorUtility.IsPersistent(objectReference);
+            var isTargetPersistent = EditorUtility.IsPersistent(targetProperty.serializedObject.targetObject);
+            var isObjToCopyPartOfPrefabAsset = PrefabUtility.IsPartOfPrefabAsset(objectReference);
             
-            if (targetIsSceneBound && sourceIsSceneBound)
+            if (!isTargetPersistent && !isObjToCopyPersistent)
             {
                var areInSameScene = GetScenePathOfGameObjectOrComponent(targetProperty.serializedObject.targetObject) == GetScenePathOfGameObjectOrComponent(objectReference);
-               if (!areInSameScene)
+               if (!areInSameScene && !isObjToCopyPartOfPrefabAsset)
                {
                    targetProperty.objectReferenceValue = null;
                    return;
                }
             }
-            else if (!sourceIsSceneBound && targetIsSceneBound)
-            {
+
+            else if ((!isObjToCopyPersistent && !isObjToCopyPartOfPrefabAsset) && isTargetPersistent) {
                 targetProperty.objectReferenceValue = null;
                 return;
             }
