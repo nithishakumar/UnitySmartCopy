@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -152,7 +153,7 @@ namespace SmartCopy
 
             if (serializedProperty.type == SerializedPropertyType.ObjectReference)
             {
-                targetProperty.objectReferenceValue = (Object)serializedProperty.data;
+                CopyObjectReference(targetProperty, (Object)serializedProperty.data);
             }
             else if (serializedProperty.type == SerializedPropertyType.ManagedReference)
             {
@@ -209,6 +210,69 @@ namespace SmartCopy
                 var relativeProperty = targetProperty.FindPropertyRelative(kvp.Key);
                 SetSerializedPropertyValue(relativeProperty, kvp.Value);
             }
+        }
+
+        /// <summary>
+        /// Returns the scene path of a GameObject or Component.
+        /// </summary>
+        /// <param name="objectToCopy">The object to check. Can be a GameObject or Component.</param>
+        /// <returns>
+        /// The path of the scene the object belongs to, or an empty string if the object is not a game object or component.
+        /// </returns>
+        private string GetScenePathOfGameObjectOrComponent(Object objectToCopy)
+        {
+            if (objectToCopy is GameObject go)
+            {
+                return go.scene.path;
+            }
+            
+            if (objectToCopy is Component component)
+            {
+                return component.gameObject.scene.path;
+            }
+            
+            return string.Empty;
+        }
+
+        /// <summary>
+        /// Copies a Unity object reference to a serialized property, ensuring scene-bound references are valid.
+        /// Scene-bound references are only copied if both source and target are in the same scene.
+        /// Null references are assigned directly.
+        /// </summary>
+        /// <param name="targetProperty">The <see cref="SerializedProperty"/> to assign to.</param>
+        /// <param name="objectReference">The Unity <see cref="Object"/> to copy (GameObject, Component, or asset).</param>
+        private void CopyObjectReference(SerializedProperty targetProperty, Object objectReference)
+        {
+            if (targetProperty == null)
+            {
+                return;
+            }
+            
+            if (objectReference == null)
+            {
+                targetProperty.objectReferenceValue = null;
+                return;
+            }
+            
+            var sourceIsSceneBound = EditorUnityObjectUtility.IsSceneBound(objectReference);
+            var targetIsSceneBound = EditorUnityObjectUtility.IsSceneBound(targetProperty.serializedObject.targetObject);
+            
+            if (targetIsSceneBound && sourceIsSceneBound)
+            {
+               var areInSameScene = GetScenePathOfGameObjectOrComponent(targetProperty.serializedObject.targetObject) == GetScenePathOfGameObjectOrComponent(objectReference);
+               if (!areInSameScene)
+               {
+                   targetProperty.objectReferenceValue = null;
+                   return;
+               }
+            }
+            else if (!sourceIsSceneBound && targetIsSceneBound)
+            {
+                targetProperty.objectReferenceValue = null;
+                return;
+            }
+            
+            targetProperty.objectReferenceValue = objectReference;
         }
     }
 }

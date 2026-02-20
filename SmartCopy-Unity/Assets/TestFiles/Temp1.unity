@@ -322,6 +322,7 @@ GameObject:
   - component: {fileID: 1892836909}
   - component: {fileID: 1892836908}
   - component: {fileID: 1892836913}
+  - component: {fileID: 1892836914}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -341,15 +342,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4825bac646e4b49b5f7c92c742eba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Test1
-  obj1: {fileID: 1892836907}
-  string1: dummy
-  color1: {r: 0.6320754, g: 0.15801886, b: 0.5681197, a: 1}
-  int1: 20
-  float1: 1000.2
-  vector3: {x: 0, y: 0, z: 0}
-  vector3List:
-  - {x: 203, y: 4, z: 0}
-  - {x: 203, y: 4, z: 0}
+  movementSpeed: 0
+  spawnPosition: {x: 0, y: 0, z: 0}
+  patrolPoints: []
+  playerName: 
+  primaryColor: {r: 0, g: 0, b: 0, a: 0}
+  characterPrefab: {fileID: 0}
+  uniqueID: 
+  secondaryColor: {r: 0, g: 0, b: 0, a: 0}
+  healthPoints: 0
 --- !u!65 &1892836909
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -455,15 +456,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51a4938e089794d428645b487e033d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Test
-  obj1: {fileID: 1892836907}
-  string1: dummy
-  color1: {r: 0.6320754, g: 0.15801886, b: 0.5681197, a: 1}
-  int1: 20
-  float1: 1000.2
-  vector3: {x: 0, y: 0, z: 0}
-  vector3List:
-  - {x: 203, y: 4, z: 0}
-  - {x: 203, y: 4, z: 0}
+  characterPrefab: {fileID: 0}
+  playerName: 
+  primaryColor: {r: 0, g: 0, b: 0, a: 0}
+  healthPoints: 0
+  movementSpeed: 0
+  spawnPosition: {x: 0, y: 0, z: 0}
+  patrolPoints: []
+--- !u!114 &1892836914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892836907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d2870d2d84ed404e818c14324e1abe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterController
+  health: 230
+  speed: 0
+  internalId: 
+  levels: 0c000000
+  tags: []
+  characterPrefab: {fileID: 0}
+  materialReference: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
