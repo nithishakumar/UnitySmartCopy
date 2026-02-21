@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -225,12 +224,12 @@ namespace SmartCopy
             {
                 return go.scene.path;
             }
-            
+
             if (objectToCopy is Component component)
             {
                 return component.gameObject.scene.path;
             }
-            
+
             return string.Empty;
         }
 
@@ -247,31 +246,37 @@ namespace SmartCopy
             {
                 return;
             }
-            
+
             if (objectReference == null)
             {
                 targetProperty.objectReferenceValue = null;
                 return;
             }
-            
-            var sourceIsSceneBound = EditorUnityObjectUtility.IsSceneBound(objectReference);
-            var targetIsSceneBound = EditorUnityObjectUtility.IsSceneBound(targetProperty.serializedObject.targetObject);
-            
-            if (targetIsSceneBound && sourceIsSceneBound)
+
+            var isObjToCopyPersistentOrPartOfPrefabAsset = EditorUtility.IsPersistent(objectReference) ||
+                                                           PrefabUtility.IsPartOfPrefabAsset(objectReference);
+            var isTargetPersistentOrPartOfPrefabAsset =
+                EditorUtility.IsPersistent(targetProperty.serializedObject.targetObject) ||
+                PrefabUtility.IsPartOfPrefabAsset(targetProperty.serializedObject.targetObject);
+
+            if (!isTargetPersistentOrPartOfPrefabAsset && !isObjToCopyPersistentOrPartOfPrefabAsset)
             {
-               var areInSameScene = GetScenePathOfGameObjectOrComponent(targetProperty.serializedObject.targetObject) == GetScenePathOfGameObjectOrComponent(objectReference);
-               if (!areInSameScene)
-               {
-                   targetProperty.objectReferenceValue = null;
-                   return;
-               }
+                var areInSameScene =
+                    GetScenePathOfGameObjectOrComponent(targetProperty.serializedObject.targetObject) ==
+                    GetScenePathOfGameObjectOrComponent(objectReference);
+                if (!areInSameScene)
+                {
+                    targetProperty.objectReferenceValue = null;
+                    return;
+                }
             }
-            else if (!sourceIsSceneBound && targetIsSceneBound)
+
+            else if (!isObjToCopyPersistentOrPartOfPrefabAsset && isTargetPersistentOrPartOfPrefabAsset)
             {
                 targetProperty.objectReferenceValue = null;
                 return;
             }
-            
+
             targetProperty.objectReferenceValue = objectReference;
         }
     }
