@@ -234,9 +234,8 @@ namespace SmartCopy
         }
 
         /// <summary>
-        /// Copies a Unity object reference to a serialized property, ensuring scene-bound references are valid.
+        /// Copies a Unity object reference to a serialized property.
         /// Scene-bound references are only copied if both source and target are in the same scene.
-        /// Null references are assigned directly.
         /// </summary>
         /// <param name="targetProperty">The <see cref="SerializedProperty"/> to assign to.</param>
         /// <param name="objectReference">The Unity <see cref="Object"/> to copy (GameObject, Component, or asset).</param>
@@ -253,13 +252,12 @@ namespace SmartCopy
                 return;
             }
 
-            var isObjToCopyPersistentOrPartOfPrefabAsset = EditorUtility.IsPersistent(objectReference) ||
-                                                           PrefabUtility.IsPartOfPrefabAsset(objectReference);
-            var isTargetPersistentOrPartOfPrefabAsset =
-                EditorUtility.IsPersistent(targetProperty.serializedObject.targetObject) ||
-                PrefabUtility.IsPartOfPrefabAsset(targetProperty.serializedObject.targetObject);
+            var isObjToCopyPersistent = EditorUtility.IsPersistent(objectReference);
 
-            if (!isTargetPersistentOrPartOfPrefabAsset && !isObjToCopyPersistentOrPartOfPrefabAsset)
+            var isTargetPersistent =
+                EditorUtility.IsPersistent(targetProperty.serializedObject.targetObject);
+
+            if (!isTargetPersistent && !isObjToCopyPersistent)
             {
                 var areInSameScene =
                     GetScenePathOfGameObjectOrComponent(targetProperty.serializedObject.targetObject) ==
@@ -271,7 +269,7 @@ namespace SmartCopy
                 }
             }
 
-            else if (!isObjToCopyPersistentOrPartOfPrefabAsset && isTargetPersistentOrPartOfPrefabAsset)
+            else if (!isObjToCopyPersistent)
             {
                 targetProperty.objectReferenceValue = null;
                 return;

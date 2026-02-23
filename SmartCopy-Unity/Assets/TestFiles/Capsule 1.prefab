@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 2658239436888631885}
   - component: {fileID: 1130597005903524661}
   - component: {fileID: 2563172761095557686}
+  - component: {fileID: 631465964887996254}
   - component: {fileID: 3906143811441619075}
+  - component: {fileID: 6775782535010660989}
   m_Layer: 0
   m_Name: Capsule 1
   m_TagString: Untagged
@@ -116,6 +118,25 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &631465964887996254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970116290254340764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a4938e089794d428645b487e033d01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterSetup
+  characterPrefab: {fileID: 0}
+  playerName: 
+  primaryColor: {r: 1, g: 0.0047169924, b: 0.0047169924, a: 0}
+  healthPoints: 1
+  movementSpeed: 22
+  spawnPosition: {x: 0, y: 0, z: 0}
+  patrolPoints: []
 --- !u!114 &3906143811441619075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,8 +154,29 @@ MonoBehaviour:
   internalId: 
   levels: 0c000000
   tags: []
-  characterPrefab: {fileID: 0}
+  characterPrefab: {fileID: 970116290254340764}
   materialReference: {fileID: 0}
+  _characterSetup: {fileID: 0}
+--- !u!114 &6775782535010660989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970116290254340764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d2870d2d84ed404e818c14324e1abe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterController
+  health: 230
+  speed: 0
+  internalId: 
+  levels: 0c000000
+  tags: []
+  characterPrefab: {fileID: 5317426131086503603}
+  materialReference: {fileID: 0}
+  _characterSetup: {fileID: 0}
 --- !u!1 &5317426131086503603
 GameObject:
   m_ObjectHideFlags: 0

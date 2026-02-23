@@ -253,10 +253,10 @@ namespace SmartCopy
                 return;
             }
             
-            var isObjToCopyPersistentOrPartOfPrefabAsset = EditorUtility.IsPersistent(objectReference) || PrefabUtility.IsPartOfPrefabAsset(objectReference);
-            var isTargetPersistentOrPartOfPrefabAsset = EditorUtility.IsPersistent(targetProperty.serializedObject.targetObject) || PrefabUtility.IsPartOfPrefabAsset(targetProperty.serializedObject.targetObject);
+            var isObjToCopyPersistent = EditorUtility.IsPersistent(objectReference);
+            var isTargetPersistent = EditorUtility.IsPersistent(targetProperty.serializedObject.targetObject);
             
-            if (!isTargetPersistentOrPartOfPrefabAsset && !isObjToCopyPersistentOrPartOfPrefabAsset)
+            if (!isTargetPersistent && !isObjToCopyPersistent)
             {
                var areInSameScene = GetScenePathOfGameObjectOrComponent(targetProperty.serializedObject.targetObject) == GetScenePathOfGameObjectOrComponent(objectReference);
                if (!areInSameScene)
@@ -266,7 +266,7 @@ namespace SmartCopy
                }
             }
 
-            else if (!isObjToCopyPersistentOrPartOfPrefabAsset && isTargetPersistentOrPartOfPrefabAsset) {
+            else if (!isObjToCopyPersistent && isTargetPersistent) {
                 targetProperty.objectReferenceValue = null;
                 return;
             }

@@ -22,4 +22,7 @@ public class CharacterController : MonoBehaviour
 
     [Header("References")] public GameObject characterPrefab;
     public Material materialReference;
+    
+    [SerializeField]
+    private CharacterSetup _characterSetup;
 }
