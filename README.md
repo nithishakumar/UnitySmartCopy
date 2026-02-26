@@ -41,7 +41,7 @@ If the property path and type match, the value is transferred automatically. Pro
 The plugin preserves serialized data in memory — even if the source or target object is destroyed — allowing you to safely paste values later without losing data. This would be useful when copying values from objects in play mode.
 
 <p align="center">
-<img width="800" height="437" alt="image" src="https://github.com/user-attachments/assets/7b020c2f-8686-45eb-84cb-2d4ef7001e86" />
+<img width="800" height="437" alt="image" src="https://github.com/user-attachments/assets/d3a8a841-045d-4cdf-a313-a054fabf11db" />
 </p>
 
 | TestDataAsset.asset (CharacterDataAsset) | TestDataAsset1.asset (CharacterDataV2Asset) |
