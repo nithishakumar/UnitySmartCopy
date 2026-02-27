@@ -53,16 +53,7 @@ Note that BaseStats.CritChance is not copied since it doesn't exist in TestDataA
 
 ## Observed Behavior
 
-### When copying from a prefab stage, if the prefab stage is closed before pasting serialized values, all object references within the prefab are not valid anymore since they're destroyed, so they're not pasted.
-
-
-### When copying from a prefab stage, if the prefab stage is not closed before pasting serialized values, the object references pasted refer to the original prefab they're copied from
-
-
-Verdict: they second case shouldn't be true.
-
-
-### When copying from a prefab stage, if any component refers to a root prefab object, the default Unity Copy/Paste Component functionality maps the root object to the current object, however smart copy doesn't. However, when any component refers to a non-root prefab object, both SmartCopy and Unity's Copy/Paste component functionality don't map object references.
+When copying from a prefab stage, if a component refers to a function in itself and is attached to the root prefab object, the default Unity Copy/Paste Component functionality maps the root object to the current object, however smart copy doesn't. However, when any component refers to a non-root prefab object, both SmartCopy and Unity's Copy/Paste component functionality don't map object references.
 
 
 ## Installation
