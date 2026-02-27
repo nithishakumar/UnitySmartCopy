@@ -53,7 +53,9 @@ Note that BaseStats.CritChance is not copied since it doesn't exist in TestDataA
 
 ## Observed Behavior
 
-When copying from a prefab stage, if a component refers to a function in itself and is attached to the root prefab object, the default Unity Copy/Paste Component functionality maps the root object to the current object, however smart copy doesn't. However, when any component refers to a non-root prefab object, both SmartCopy and Unity's Copy/Paste component functionality don't map object references.
+When copying from a prefab stage, if a component refers to a function in itself and is attached to the root prefab object, the default Unity Copy/Paste Component functionality maps the root object to the current object, however smart copy doesn't.  (Highlight both prefab stage closed + not closed)
+
+However, when any component refers to a non-root prefab object, both SmartCopy and Unity's Copy/Paste component functionality don't map object references.
 
 
 ## Installation
