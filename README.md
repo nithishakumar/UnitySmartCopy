@@ -51,11 +51,29 @@ The plugin preserves serialized data in memory — even if the source or target 
 Note that BaseStats.CritChance is not copied since it doesn't exist in TestDataAsset1.asset.
 
 
-## Observed Behavior
+## Minor Difference between SmartCopy and Unity's Default Copy + Paste Behavior 
 
-When copying from a prefab stage, if a component refers to a function in itself and is attached to the root prefab object, the default Unity Copy/Paste Component functionality maps the root object to the current object, however smart copy doesn't.  (Highlight both prefab stage closed + not closed)
+When copying a component from Prefab Stage to another component of the same type, the following difference occurs:
 
-However, when any component refers to a non-root prefab object, both SmartCopy and Unity's Copy/Paste component functionality don't map object references.
+If the component is attached to the root prefab object and contains a self-reference (e.g., references a function on itself), Unity’s default Copy/Paste Component remaps the root reference to the target object. SmartCopy does not perform this remapping.
+
+Prefab Stage Closed Before Copying
+
+| Default Copy/Paste | SmartCopy |
+|----------|----------|
+| " | " |
+
+Prefab Stage Open Before Copying
+
+| Default Copy/Paste | SmartCopy |
+|----------|----------|
+| " | " |
+
+If the component is attached to a non-root prefab object, both Unity’s default behavior and SmartCopy behave identically.
+
+| Default Copy/Paste | SmartCopy |
+|----------|----------|
+| " | " |
 
 
 ## Installation
