@@ -57,7 +57,7 @@ Note that BaseStats.CritChance is not copied since it doesn't exist in TestDataA
 
 If the component is attached to the root prefab object and contains a self-reference (e.g., references a function on itself), Unity’s default Copy/Paste Component remaps the root reference to the target object. SmartCopy does not perform this remapping.
 
-#### When the Prefab Stage is Closed Before Copying:
+### When the Prefab Stage is Closed Before Copying:
 
 Unity's default behavior maps OnClick's target to the root object (Cube) in the scene, however, SmartCopy doesn't set it to a valid object because the object reference is lost after the prefab stage has closed. Note how both don't set the Character Prefab to the Cube object since it is not present in the current scene.
 
@@ -66,7 +66,7 @@ Unity's default behavior maps OnClick's target to the root object (Cube) in the 
 ![ezgif-32d0dd6e98a24856](https://github.com/user-attachments/assets/5db555c1-de69-4826-975e-cfce8c875bad)
 
 
-#### When the Prefab Stage is Open Before Copying:
+### When the Prefab Stage is Open Before Copying:
 
 Unity's default behavior maps OnClick's target to the root object (Cube) in the scene, however, SmartCopy copies the root prefab object (Capsule 1) from the Prefab asset itself. Note how both set the Character Prefab to the Cube object since it's still a valid persisent reference because the prefab stage is not closed.
 
