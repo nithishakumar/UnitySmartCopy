@@ -51,30 +51,30 @@ The plugin preserves serialized data in memory — even if the source or target 
 Note that BaseStats.CritChance is not copied since it doesn't exist in TestDataAsset1.asset.
 
 
-## Minor Difference between SmartCopy and Unity's Default Copy + Paste Behavior 
+## Minor Difference between SmartCopy and Unity's Default Copy/Paste Behavior 
 
-When copying a component from Prefab Stage to another component of the same type, the following difference occurs:
+### When copying a component from Prefab Stage to another component of the same type, the following difference occurs:
 
 If the component is attached to the root prefab object and contains a self-reference (e.g., references a function on itself), Unity’s default Copy/Paste Component remaps the root reference to the target object. SmartCopy does not perform this remapping.
 
-Prefab Stage Closed Before Copying
+#### When the Prefab Stage is Closed Before Copying:
 
-| Default Copy/Paste | SmartCopy |
-|----------|----------|
-| " | " |
+Unity's default behavior maps OnClick's target to the root object (Cube) in the scene, however, SmartCopy doesn't set it to a valid object because the object reference is lost after the prefab stage has closed. Note how both don't set the Character Prefab to the Cube object since it is not present in the current scene.
 
-Prefab Stage Open Before Copying
+![ezgif-3452865fcaed27bb](https://github.com/user-attachments/assets/ec6e8714-1a29-49cf-ba24-52dbd17b24a3)
 
-| Default Copy/Paste | SmartCopy |
-|----------|----------|
-| " | " |
+![ezgif-32d0dd6e98a24856](https://github.com/user-attachments/assets/5db555c1-de69-4826-975e-cfce8c875bad)
 
-If the component is attached to a non-root prefab object, both Unity’s default behavior and SmartCopy behave identically.
 
-| Default Copy/Paste | SmartCopy |
-|----------|----------|
-| " | " |
+#### When the Prefab Stage is Open Before Copying:
 
+Unity's default behavior maps OnClick's target to the root object (Cube) in the scene, however, SmartCopy copies the root prefab object (Capsule 1) from the Prefab asset itself. Note how both set the Character Prefab to the Cube object since it's still a valid persisent reference because the prefab stage is not closed.
+
+![ezgif-3047f4ea52198aa4](https://github.com/user-attachments/assets/bb798c68-d452-422f-8d2f-4f3ef1b77b08)
+
+![ezgif-308344b5fd8a33df](https://github.com/user-attachments/assets/d708ed71-0888-42e3-9539-7c32243228af)
+
+### However, if the component is attached to a non-root prefab object, both Unity’s default behavior and SmartCopy behave identically.
 
 ## Installation
 
