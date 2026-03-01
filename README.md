@@ -59,7 +59,7 @@ If the component is attached to the root prefab object and contains a self-refer
 
 ### Case 1 - When the Prefab Stage is Closed Before Copying:
 
-Unity's default behavior maps OnClick's target to the root object (Cube) in the scene, however, SmartCopy doesn't set it to a valid object because the object reference is lost after the prefab stage has closed. Note how both don't set the Character Prefab to the Cube object since it is not present in the current scene.
+Unity's default behavior maps OnClick's target to the root object (Cube) in the scene, however, SmartCopy doesn't set it to a valid object because the object reference is lost after the prefab stage has closed. Note how both don't set the Character Prefab to the Cube object since it is not present in the current scene. Cube is the child object present inside the Capsule 1 prefab.
 
 ![ezgif-3452865fcaed27bb](https://github.com/user-attachments/assets/ec6e8714-1a29-49cf-ba24-52dbd17b24a3)
 
@@ -68,13 +68,30 @@ Unity's default behavior maps OnClick's target to the root object (Cube) in the 
 
 ### Case 2 - When the Prefab Stage is Open Before Copying:
 
-Unity's default behavior maps OnClick's target to the root object (Cube) in the scene, however, SmartCopy copies the root prefab object (Capsule 1) from the Prefab asset itself. Note how both set the Character Prefab to the Cube object since it's still a valid persisent reference because the prefab stage is not closed.
+Unity's default behavior maps OnClick's target to the root object (Cube) in the scene, however, SmartCopy copies the root prefab object (Capsule 1) from the Prefab asset itself. Note how both set the Character Prefab to the Cube object since it's still a valid persisent reference because the prefab stage is not closed. Cube is the child object present inside the Capsule 1 prefab.
 
 ![ezgif-3047f4ea52198aa4](https://github.com/user-attachments/assets/bb798c68-d452-422f-8d2f-4f3ef1b77b08)
 
 ![ezgif-308344b5fd8a33df](https://github.com/user-attachments/assets/d708ed71-0888-42e3-9539-7c32243228af)
 
-### However, if the component is attached to a non-root prefab object, both Unity’s default behavior and SmartCopy behave identically.
+### However, if the component references a different non-root prefab object, both Unity’s default behavior and SmartCopy behave identically.
+
+For instance, consider copying CharacterController.cs. The onClick event refers to the Cube game object's box collider. Cube is the child object present inside the Capsule 1 prefab.
+
+### Case 1 - When the Prefab Stage is Closed Before Copying:
+
+![ezgif-49991330a350d52d](https://github.com/user-attachments/assets/66dd9ca4-8d88-4d66-870e-9208a9e10a9b)
+
+![ezgif-4a2609c83cfbe89a](https://github.com/user-attachments/assets/18830260-e2b9-481b-8ecd-309ff845ffd7)
+
+
+### Case 2 - When the Prefab Stage is Open Before Copying:
+
+![ezgif-45bd4ca229821350](https://github.com/user-attachments/assets/d0960797-2174-432b-bef2-b5bbe4fcae99)
+
+![ezgif-4312e0c427c9c974](https://github.com/user-attachments/assets/ef70a6a8-7871-49b9-b989-28e6c6235628)
+
+
 
 ## Installation
 
