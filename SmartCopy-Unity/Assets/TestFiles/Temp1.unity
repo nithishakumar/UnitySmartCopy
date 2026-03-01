@@ -475,13 +475,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d2870d2d84ed404e818c14324e1abe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController
-  health: 230
+  onClick:
+    m_PersistentCalls:
+      m_Calls: []
+  health: 0
   speed: 0
   internalId: 
-  levels: 0c000000
+  levels: 
   tags: []
   characterPrefab: {fileID: 0}
   materialReference: {fileID: 0}
+  _characterSetup: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

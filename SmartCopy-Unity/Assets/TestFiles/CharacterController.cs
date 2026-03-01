@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CharacterController : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class CharacterController : MonoBehaviour
         public int agility;
         public float critChance;
     }
+
+    public UnityEvent onClick;
 
     [Header("Primitive Fields")] public int health;
     public float speed;
